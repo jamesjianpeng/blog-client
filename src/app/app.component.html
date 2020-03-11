@@ -297,8 +297,15 @@
     }
   }
 </style>
-
-<router-outlet></router-outlet>
+  <div class="card-body">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" [routerLink]="'/'" routerLinkActive="active"> home </a>
+      <a class="navbar-brand" [routerLink]="'/article'" routerLinkActive="active"> article </a>
+    </nav>
+    <p class="card-text">
+      <router-outlet></router-outlet>
+    </p>
+  </div>
 
 
 

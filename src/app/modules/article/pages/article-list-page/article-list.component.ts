@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/@core/service/article';
 import { ConfigService } from 'src/app/@core/service/config';
+import { ITag, IArticle } from '@smartblog/models'
 export interface IData {
   tag: any[];
 }
@@ -16,8 +17,8 @@ export class ArticleListComponent implements OnInit {
     private configService: ConfigService
   ) {}
 
-  public articles: { text }[] = [ { text: '11'} ];
-  public tags: { text: string }[] = [ { text: '11'} ];
+  public articles: IArticle[] = [];
+  public tags: ITag[] = [];
   public data: any = { title: '11', content: 'ok' }
 
 
