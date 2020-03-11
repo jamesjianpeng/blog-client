@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod'
 
 @Injectable()
 export class ArticleService {
@@ -10,7 +11,7 @@ export class ArticleService {
     data: any
   ): Observable<{ data: any[]; total: number }> {
     return this.http.get<{ data: any[]; total: number }>(
-      `http://localhost:3070/api/v1/get/articles`,
+      `${environment.api}/api/v1/get/articles`,
       {
         params: { data }
       }
