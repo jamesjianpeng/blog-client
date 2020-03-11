@@ -1,5 +1,5 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
-// import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ArticleService } from 'src/app/@core/service/article';
 import { ConfigService } from 'src/app/@core/service/config';
 import { ArticleRoutingModule } from './article-routing.module';
@@ -8,6 +8,7 @@ import { ArticleDetailComponent } from 'src/app/modules/article/pages/article-de
 
 @NgModule({
   imports: [
+    CommonModule,
     ArticleRoutingModule
   ],
   declarations: [
