@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ITag } from '@smartblog/models';
-import { Observable } from 'rxjs';
-import { Store, select } from '@ngrx/store';
+// import { ITag } from '@smartblog/models';
+// import { Observable } from 'rxjs';
+// import { Store, select } from '@ngrx/store';
 import { reset } from 'src/app/@core/store/tag/tag.actions';
 
 @Component({
@@ -11,7 +11,7 @@ import { reset } from 'src/app/@core/store/tag/tag.actions';
 })
 export class AppComponent {
   title = 'blog';
-  currentTag: Observable<ITag>;
+  // currentTag: Observable<ITag>;
   public data: any = {
     text: 'onne',
     value: '0000'
@@ -21,11 +21,11 @@ export class AppComponent {
     'good'
   ] as string[];
 
-  constructor(private store: Store<{ currentTag: ITag }>) {
-    this.currentTag = store.pipe(select('currentTag'));
-  }
+  // constructor(private store: Store<{ currentTag: ITag }>) {
+  //   this.currentTag = store.pipe(select('currentTag'));
+  // }
 
   reset() {
-    this.store.dispatch(reset());
+    // this.store.dispatch(reset());
   }
 }
