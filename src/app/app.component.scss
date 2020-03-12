@@ -29,6 +29,15 @@ div, h1, span, ul, li, p {
   position: relative;
 }
 
+.nav {
+  color: #ff5722;
+  margin: 0 10px;
+  font-size: 14px;
+  height: 36px;
+  line-height: 36px;
+}
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

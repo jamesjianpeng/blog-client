@@ -11,14 +11,35 @@
 
 .tag {
   text-align: right;
+  font-size: 12px;
+  font-family: "Lato";
+  margin-bottom: 8px;
+  color: #ffb74d;
 }
 
 .tag-box {
   width: 200px;
+  padding: 10px;
+  border-right: 1px solid #ffe0b2;
+  box-shadow:
+    3px 0 0 0 rgba(225, 224, 178, .1),
+    2px 0 0 0 rgba(225, 224, 178, .2),
+    1px 0 0 0 rgba(225, 224, 178, .3)
+  ;
 }
 
 .content-box {
   width: 100%;
-  background: #fff;
+  padding: 10px;
   margin-left: 10px
+}
+
+.article {
+  padding: 10px;
+  border-bottom: 1px solid #ffe0b2;
+  box-shadow:
+    0 3px 0 0 rgba(225, 224, 178, .1),
+    0 2px 0 0 rgba(225, 224, 178, .2),
+    0 1px 0 0 rgba(225, 224, 178, .3)
+  ;
 }

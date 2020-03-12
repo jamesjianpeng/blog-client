@@ -13,11 +13,17 @@
   width: 800px;
   margin: 0 auto;
 }
+
+a{outline:none;}
+
+a:active{outline: none;background: #eee;}
+
+a:focus{outline:0;}
 </style>
 <div class="body">
   <nav class="flex-h-center">
-    <a class="navbar-brand" [routerLink]="'/'" routerLinkActive="active"> home </a>
-    <a class="navbar-brand" [routerLink]="'/article'" routerLinkActive="active"> article </a>
+    <a class="nav" [routerLink]="'/'"> home </a>
+    <a class="nav" [routerLink]="'/article'" > article </a>
   </nav>
   <div class="width-full">
         <router-outlet class="width-full"></router-outlet>
