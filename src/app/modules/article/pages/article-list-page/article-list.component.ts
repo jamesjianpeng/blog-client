@@ -20,6 +20,7 @@ export class ArticleListComponent implements OnInit {
   public articles: IArticle[] = [];
   public tags: ITag[] = [];
   public data: any = { title: '11', content: 'ok' };
+  public currentTag: ITag = {} as ITag;
 
 
   ngOnInit() {
@@ -30,7 +31,12 @@ export class ArticleListComponent implements OnInit {
     );
     this.configService.getTags().subscribe(({ data }) => {
         this.tags = data;
+        this.currentTag = this.tags[0];
       }
     );
+  }
+
+  change(tag: ITag) {
+    this.currentTag = tag;
   }
 }

@@ -12,14 +12,83 @@
 .tag {
   text-align: right;
   font-size: 12px;
+  height: 24px;
+  line-height: 24px;
   font-family: "Lato";
   margin-bottom: 8px;
   color: #ffb74d;
+  padding-right: 10px;
+  cursor: pointer;
+  transition: .3s ease;
+  transform-origin: right center;
+  position: relative;
+  overflow: hidden;
 }
+
+.tag:hover {
+  // background: rgba(255, 183, 77, .1);
+  transform: scale(1.1);
+  box-shadow:
+    3px 0 0 0 rgba(255, 183, 77, .1),
+    2px 0 0 0 rgba(255, 183, 77, .1),
+    1px 0 0 0 rgba(255, 183, 77, .1)
+  ;
+}
+.tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  background: rgba(255, 183, 77, .1);
+  transition: .3s ease;
+  z-index: 2;
+}
+
+.tag:hover::before {
+  transform: translateX(10%);
+  background: rgba(255, 183, 77, .1);
+}
+.active-tag {
+  transform: scale(1.1);
+  color: #ff5722;
+}
+.active-tag::before, .active-tag:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%) ;
+  background: rgba(255, 87, 34, .1);
+  transition: .3s ease;
+  z-index: 2;
+
+  -webkit-animation: moaskAnimation .4s ease-in-out;
+  -moz-animation: moaskAnimation .4s ease-in-out;
+  -o-animation: moaskAnimation .4s ease-in-out;
+  animation: moaskAnimation .4s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+// .active-tag:hover::before {
+//   color: #ff5722;
+//   background: rgba(255, 87, 34, .1);
+//   transform: scale(1.1);
+//   position: relative;
+//   box-shadow:
+//     3px 0 0 0 rgba(255, 87, 34, .1),
+//     2px 0 0 0 rgba(255, 87, 34, .1),
+//     1px 0 0 0 rgba(255, 87, 34, .1)
+//   ;
+// }
 
 .tag-box {
   width: 200px;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
   border-right: 1px solid #ffe0b2;
   box-shadow:
     3px 0 0 0 rgba(225, 224, 178, .1),
@@ -42,4 +111,14 @@
     0 2px 0 0 rgba(225, 224, 178, .2),
     0 1px 0 0 rgba(225, 224, 178, .3)
   ;
+}
+
+@keyframes moaskAnimation {
+  0% {
+      transform: translateX(100%) scale(1.1);
+  }
+
+  100% {
+      transform: translateX(0) scale(1.1);
+  }
 }

@@ -1,7 +1,12 @@
 
 <div class="flex-h-flex-start-nowrap">
     <div class="tag-box flex-shrink-0">
-        <div class="tag" *ngFor="let tag of tags">
+        <div
+          *ngFor="let tag of tags"
+          [ngClass]="[currentTag.value === tag.value ? 'active-tag' : '']"
+          class="tag"
+          (click)="change(tag)"
+        >
             {{ tag.text }}
         </div>
     </div>
