@@ -1,4 +1,24 @@
+.flex-h-flex-start-nowrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
 .title {
   font-size: 24px;
   color: #eee;
+}
+
+.tag {
+  text-align: right;
+}
+
+.tag-box {
+  width: 200px;
+}
+
+.content-box {
+  width: 100%;
+  background: #fff;
+  margin-left: 10px
 }

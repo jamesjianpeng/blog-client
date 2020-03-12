@@ -1,11 +1,20 @@
-<h3>
 
-    ---<br />
-    <div *ngFor="let tag of tags">
-        {{ tag.text }}
+<div class="flex-h-flex-start-nowrap">
+    <div class="tag-box flex-shrink-0">
+        <div class="tag" *ngFor="let tag of tags">
+            {{ tag.text }}
+        </div>
     </div>
-    {{tags.length}}
-    ---<br />
-    {{data.title}}
-    {{data.content}}
-</h3>
+    <div class="content-box">
+            <div *ngFor="let article of articles">
+                {{ article.title }}
+                <div>
+                    {{ article.createTime }}
+                    {{ article.updateTime }}
+                </div>
+                <div>
+                  <a class="navbar-brand" [routerLink]="'/article/' + article._id " routerLinkActive="active"> 查看 </a>
+                </div>
+            </div>
+    </div>
+</div>
