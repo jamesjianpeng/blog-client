@@ -12,7 +12,7 @@ export class ArticleService {
     data: any
   ): Observable<{ data: { data: IArticle[] }; total: number }> {
     return this.http.get<{ data: { data: IArticle[] }; total: number }>(
-      `${environment.api}/api/v1/get/articles?page=1&pageSize=10&type=doing&keyword=&startDate=&endDate=`
+      `${environment.api}/api/v1/get/articles?tag=${data.tag}&page=1&pageSize=10&type=doing&keyword=&startDate=&endDate=`
     );
   }
 

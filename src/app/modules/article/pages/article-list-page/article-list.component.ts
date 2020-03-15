@@ -24,19 +24,28 @@ export class ArticleListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.articleService.getArticles({}).subscribe(({ data }) => {
+    this.articleService.getArticles({
+      tag: ''
+    }).subscribe(({ data }) => {
         this.articles = data.data;
         console.log(data);
       }
     );
     this.configService.getTags().subscribe(({ data }) => {
         this.tags = data;
-        this.currentTag = this.tags[0];
+        this.currentTag = { text: 'all', value: '', createTime: '', updateTime: '', version: 1, history: []};
       }
     );
   }
 
   change(tag: ITag) {
     this.currentTag = tag;
+    this.articleService.getArticles({
+      tag: tag.value
+    }).subscribe(({ data }) => {
+      this.articles = data.data;
+      console.log(data);
+    }
+  );
   }
 }
