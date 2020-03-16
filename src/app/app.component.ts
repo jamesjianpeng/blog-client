@@ -20,11 +20,6 @@ export class AppComponent {
     'test',
     'good'
   ] as string[];
-  public markdown = `
-  # Title
-  ## sub title
-  
-  `
 
   // constructor(private store: Store<{ currentTag: ITag }>) {
   //   this.currentTag = store.pipe(select('currentTag'));
