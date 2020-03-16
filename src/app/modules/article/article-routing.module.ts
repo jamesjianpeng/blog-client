@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ArticleListComponent } from 'src/app/modules/article/pages/article-list-page/article-list.component';
-import { ArticleDetailComponent } from 'src/app/modules/article/pages/article-detail-page/article-detail.component';
-
-import { FormsModule } from '@angular/forms';
-import { MarkdownModule } from 'ngx-markdown';
 
 import 'prismjs';
 import 'prismjs/components/prism-typescript.min.js';
@@ -17,15 +13,13 @@ const routes: Routes = [
   },
   {
     path: ':id',
-    component: ArticleDetailComponent
+    loadChildren: () => import('src/app/modules/article/pages/article-detail-page/article-detail.module').then(m => m.ArticleDetailModule)
   }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forChild(routes),
-    FormsModule,
-    MarkdownModule.forRoot(),
+    RouterModule.forChild(routes)
   ],
   exports: [RouterModule]
 })

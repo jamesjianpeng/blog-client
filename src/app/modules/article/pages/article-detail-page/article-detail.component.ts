@@ -11,11 +11,6 @@ export class ArticleDetailComponent implements OnInit {
   title = 'blog-article-home';
   article: IArticle;
   tags: any[];
-    public markdown = `
-  # Title
-  ## sub title
-  
-  `
 
   constructor(
     private articleService: ArticleService,
