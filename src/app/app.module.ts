@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FooterComponent } from './modules/components/footer/footer.component'
 import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -18,4 +20,4 @@ import { CommonModule } from '@angular/common';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
