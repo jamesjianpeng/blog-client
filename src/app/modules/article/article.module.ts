@@ -4,11 +4,12 @@ import { ArticleService } from 'src/app/@core/service/article';
 import { ConfigService } from 'src/app/@core/service/config';
 import { ArticleRoutingModule } from './article-routing.module';
 import { ArticleListComponent } from 'src/app/modules/article/pages/article-list-page/article-list.component';
-
+import { MomentModule } from 'ngx-moment'; 
 @NgModule({
   imports: [
     CommonModule,
-    ArticleRoutingModule
+    ArticleRoutingModule,
+    MomentModule
   ],
   declarations: [
     ArticleListComponent,
