@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  AfterContentChecked,
+  ViewChild, 
+  ElementRef, 
+  AfterViewInit,
+  AfterViewChecked  } from '@angular/core';
 import { ArticleService } from 'src/app/@core/service/article';
 import { ConfigService } from 'src/app/@core/service/config';
 import { ITag, IArticle } from '@smartblog/models';
@@ -11,7 +18,7 @@ export interface IData {
   templateUrl: './version-list.component.html',
   styleUrls: ['./version-list.component.scss']
 })
-export class VersionListComponent implements OnInit {
+export class VersionListComponent implements OnInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   constructor(
     private articleService: ArticleService,
     private configService: ConfigService
@@ -21,6 +28,8 @@ export class VersionListComponent implements OnInit {
   public tags: ITag[] = [];
   public data: any = { title: '11', content: 'ok' };
   public currentTag: ITag = {} as ITag;
+  @ViewChild('line') line: ElementRef
+  @ViewChild('versionBox') versionBox: ElementRef
 
 
   ngOnInit() {
@@ -38,6 +47,15 @@ export class VersionListComponent implements OnInit {
     );
   }
 
+  ngAfterContentChecked() {
+    console.log('AfterContentChecked')
+  }
+
+  ngAfterViewChecked() {
+    console.log('ngAfterViewChecked')
+    this.resetHeight()
+  }
+
   change(tag: ITag) {
     this.currentTag = tag;
     this.articleService.getArticles({
@@ -45,7 +63,18 @@ export class VersionListComponent implements OnInit {
     }).subscribe(({ data }) => {
       this.articles = data.data;
       console.log(data);
-    }
-  );
+    });
+  }
+  
+  ngAfterViewInit() {
+  }
+
+  resetHeight () {
+    const el = this.line.nativeElement
+    const box = this.versionBox.nativeElement
+    const { height } = box.getBoundingClientRect()
+    console.log(height)
+    el.style= `height: ${height}px;`
+    console.log(this.line.nativeElement)
   }
 }

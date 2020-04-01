@@ -1,24 +1,14 @@
 
 <div class="flex-h-flex-start-nowrap">
-    <!-- <div class="tag-box flex-shrink-0">
-        <div
-          *ngFor="let tag of tags"
-          [ngClass]="[currentTag.value === tag.value ? 'active-tag' : '']"
-          class="tag"
-          (click)="change(tag)"
-        >
-            {{ tag.text }}
-        </div>
-    </div> -->
-    <div class="content-box">
-            <div class="y">
+    <div class="content-box" #versionBox>
+            <div #line class="y">
 
             </div>
             <div
               *ngFor="let article of articles; let i = index"
               [ngClass]="[i % 2 === 0 ? 'left-article version-article' : 'right-article version-article']"
               >
-                <div [ngClass]="[ i % 2 === 0 ? 'version-article-left_arrow' : 'version-article-right_arrow']"></div>
+                <div [ngClass]="[ i % 2 === 0 ? 'version-article-l  eft_arrow' : 'version-article-right_arrow']"></div>
                 {{ article.title }}
                 <ul>
                     <li>
