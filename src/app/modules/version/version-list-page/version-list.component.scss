@@ -108,17 +108,18 @@
     padding: 10px;
     border: 1px solid #ffe0b2;
     border-radius: 10px;
-    // box-shadow:
-    //   0 3px 0 0 rgba(225, 224, 178, .1),
-    //   0 2px 0 0 rgba(225, 224, 178, .2),
-    //   0 1px 0 0 rgba(225, 224, 178, .3)
-    // ;
-
     position: relative;
-
     width: 50%;
     transition: .3s ease-in;
     cursor: pointer;
+  }
+
+  .more-info {
+    display: none;
+  }
+
+  .version-article:hover .more-info {
+    display: block;
   }
 
   .version-article-left_arrow {

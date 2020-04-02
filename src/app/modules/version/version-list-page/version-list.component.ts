@@ -33,7 +33,7 @@ export class VersionListComponent implements OnInit, AfterContentChecked, AfterV
 
 
   ngOnInit() {
-    this.articleService.getArticles({
+    this.articleService.getArticlesLine({
       tag: ''
     }).subscribe(({ data }) => {
         this.articles = data.data;

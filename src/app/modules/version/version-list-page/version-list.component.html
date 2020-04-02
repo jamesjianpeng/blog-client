@@ -10,7 +10,7 @@
               >
                 <div [ngClass]="[ i % 2 === 0 ? 'version-article-l  eft_arrow' : 'version-article-right_arrow']"></div>
                 {{ article.title }}
-                <ul>
+                <ul class="more-info">
                     <li>
                         create: {{ article.createTime | amDateFormat:'YYYY/MM/DD hh:mm:ss' }}
                     </li>
