@@ -18,8 +18,8 @@ export class ArticleService {
 
   public getArticlesLine(
     data: any
-  ): Observable<{ data: { data: IArticle[] }; total: number }> {
-    return this.http.get<{ data: { data: IArticle[] }; total: number }>(
+  ): Observable<{ data: { data: IArticle[], aggregateList: any[], count: number }; total: number }> {
+    return this.http.get<{ data: { data: IArticle[], aggregateList: any[], count: number }; total: number }>(
       `${environment.api}/api/v1/get/articlesLine?tag=${data.tag}&page=1&pageSize=1000&type=doing&keyword=&startDate=&endDate=`
     );
   }

@@ -10,4 +10,11 @@
 .variable-binding {
   display: block;
   background-color: #fff;
+  p img {
+    width: 100%;
+  }
+}
+
+.markdown::ng-deep img {
+  width: 100%;
 }

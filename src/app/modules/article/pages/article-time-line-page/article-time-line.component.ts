@@ -15,10 +15,10 @@ export interface IData {
 
 
 @Component({
-  templateUrl: './version-list.component.html',
-  styleUrls: ['./version-list.component.scss']
+  templateUrl: './article-time-line.component.html',
+  styleUrls: ['./article-time-line.component.scss']
 })
-export class VersionListComponent implements OnInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
+export class ArticleTimeLineComponent implements OnInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   constructor(
     private articleService: ArticleService,
     private configService: ConfigService

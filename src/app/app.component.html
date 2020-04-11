@@ -9,26 +9,51 @@
 
 <style>
 
-.body {
-  width: 800px;
-  margin: 0 auto;
-}
-
 a{outline:none;}
 
 a:active{outline: none;background: #eee;}
 
 a:focus{outline:0;}
+.nav-wrap {
+  height: 60px;
+  width: 100%;
+  background-color: #ffebce;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.nav-item {
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
+  color: #ffb74d;
+  font-size: 1px;
+  font-size: 12px;
+  transition: .3s ease;
+}
+.nav-item:hover {
+  transform: scale(1.2);
+}
+.nav-active, .nav-active:hover {
+  color: #ff5722;
+  transform: scale(1.2);
+}
+.router-outlet-box {
+  margin-top: 60px;
+}
 </style>
 <div class="body">
-  <nav class="flex-h-center">
-    <a class="nav" [routerLink]="'/'"> home </a>
-
-    <a class="nav" [routerLink]="'/version'"> version </a>
-
-    <a class="nav" [routerLink]="'/article'" > article </a>
+  <nav class="nav-wrap flex-h-flex-start-center">
+    <div 
+      *ngFor="let router of routerList"
+      (click)="onNavigate(router.path)"
+      class="nav-item p-l-15 p-r-15"
+      [ngClass]="[url === router.path ? 'nav-active' : '']">
+      {{ router.name }}
+    </div>
   </nav>
-  <div class="width-full">
+  <div class="p-20 router-outlet-box">
         <router-outlet class="width-full"></router-outlet>
   </div>
   <div>

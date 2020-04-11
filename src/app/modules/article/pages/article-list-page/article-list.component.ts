@@ -28,7 +28,6 @@ export class ArticleListComponent implements OnInit {
       tag: ''
     }).subscribe(({ data }) => {
         this.articles = data.data;
-        console.log(data);
       }
     );
     this.configService.getTags().subscribe(({ data }) => {
